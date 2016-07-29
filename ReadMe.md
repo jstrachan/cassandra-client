@@ -4,7 +4,7 @@ This quickstart run in a Java standalone container, using Spring with Apache Cam
 
 This example uses a timer to trigger a message every 5 seconds and executing a query on a Cassandra Cluster keyspace.
 
-This example is related to `cassandra-server` quickstart which must be up and running.
+This example is related to `cassandra` app from [Fabric8-IPaas](https://github.com/fabric8io/fabric8-ipaas/tree/master/cassandra) which must be up and running.
 
 You should be able to see the query result set looking at the logs of `cassandra-client`.
 
