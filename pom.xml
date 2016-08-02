@@ -16,8 +16,11 @@
 
     <!-- dependency versions -->
     <camel.version>2.18-SNAPSHOT</camel.version>
+    <fabric8.version>2.3-SNAPSHOT</fabric8.version>
+<!--
     <fabric8.version>2.2.142</fabric8.version>
-    <fabric8-ipaas.version>2.2.103</fabric8-ipaas.version>
+-->
+    <fabric8-ipaas.version>2.2.147</fabric8-ipaas.version>
     <commons-lang3.version>3.4</commons-lang3.version>
 
     <!-- maven plugin versions -->
@@ -28,6 +31,21 @@
     <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
   </properties>
 
+  <repositories>
+    <repository>
+        <id>apache.snapshots</id>
+        <name>Apache Development Snapshot Repository</name>
+        <url>https://repository.apache.org/content/repositories/snapshots/</url>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+  </repositories>
+  
+  
   <dependencyManagement>
     <dependencies>
       <!-- import fabric8 platform bom first -->
@@ -126,6 +144,13 @@
 
   <build>
     <defaultGoal>install</defaultGoal>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+
     <extensions>
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
